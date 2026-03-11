@@ -1,0 +1,13 @@
+CREATE TABLE suppliers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  address VARCHAR(255),
+  email VARCHAR(255),
+  phone VARCHAR(50),
+  status VARCHAR(50) DEFAULT 'Active',
+  branch_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+

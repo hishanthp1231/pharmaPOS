@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS profile_settings;
+
+CREATE TABLE profile_settings (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  phone VARCHAR(30),
+  role VARCHAR(30) NOT NULL
+);

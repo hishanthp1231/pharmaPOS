@@ -1,0 +1,7 @@
+-- Add password, contact, and other missing columns to workers table
+ALTER TABLE workers
+ADD COLUMN password VARCHAR(255) NOT NULL AFTER email,
+ADD COLUMN contact VARCHAR(20) AFTER password,
+MODIFY role VARCHAR(50) NOT NULL DEFAULT 'staff',
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;

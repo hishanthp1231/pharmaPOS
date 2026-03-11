@@ -1,0 +1,27 @@
+CREATE TABLE branches (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE roles (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  can_view BOOLEAN DEFAULT TRUE,
+  can_edit BOOLEAN DEFAULT FALSE,
+  can_delete BOOLEAN DEFAULT FALSE,
+  pages TEXT
+);
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role_id INT,
+  branch_id TEXT,
+  privileges TEXT,
+  is_admin BOOLEAN DEFAULT FALSE,
+  FOREIGN KEY (role_id) REFERENCES roles(id)
+);
+
+ALTER TABLE users
+  MODIFY COLUMN branch_id TEXT;

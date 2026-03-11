@@ -1,0 +1,20 @@
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  customer_name VARCHAR(100) NOT NULL,
+  customer_phone VARCHAR(20),
+  num_persons INT NOT NULL,
+  order_type ENUM('dine-in', 'takeaway') NOT NULL,
+  table_id INT,
+  branch_id INT NOT NULL,
+  status VARCHAR(20) DEFAULT 'pending',
+  date DATE NOT NULL,
+  cart JSON,
+  payment_method VARCHAR(20),
+  subtotal DECIMAL(12,2),
+  discount JSON,
+  tax JSON,
+  total DECIMAL(12,2),
+  paid_amount DECIMAL(12,2),
+  future_credit DECIMAL(12,2),
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

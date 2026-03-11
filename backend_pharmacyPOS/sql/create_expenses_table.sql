@@ -1,0 +1,14 @@
+CREATE TABLE expenses (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  expense VARCHAR(255) NOT NULL,
+  paidTo VARCHAR(255) NOT NULL,
+  date DATE NOT NULL,
+  amount DECIMAL(12,2) NOT NULL,
+  paymentMethod VARCHAR(50) NOT NULL,
+  status VARCHAR(50) DEFAULT 'Paid',
+  balance DECIMAL(12,2) DEFAULT 0,
+  remark TEXT,
+  receipt VARCHAR(255),
+  branch_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
